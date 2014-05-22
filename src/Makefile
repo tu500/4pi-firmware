@@ -100,7 +100,7 @@ TARGET_OPTS =
 endif
 
 CFLAGS += $(TARGET_OPTS)
-CFLAGS += -Wall -mlong-calls -ffunction-sections
+CFLAGS += -Wall -Werror -std=gnu99 -mlong-calls -ffunction-sections
 CFLAGS += -g $(OPTIMIZATION) $(INCLUDES) -D$(CHIP) -DTRACE_LEVEL=$(TRACE_LEVEL)
 ASFLAGS = $(TARGET_OPTS) -Wall -g $(OPTIMIZATION) $(INCLUDES) -D$(CHIP) -D__ASSEMBLY__
 LDFLAGS = -g $(OPTIMIZATION) -nostartfiles $(TARGET_OPTS) -Wl,--gc-sections

@@ -17,31 +17,17 @@
 #include "planner.h"
 #include "gcode_parser.h"
 #include "sdcard.h"
-//#include "heaters.h"
+#include "motoropts.h"
 
 
 //--------------------------
 // EXTERN FUNCTIONS
 //--------------------------
 extern void adc_sample();
-extern void samserial_init();
-
-extern void motor_setup();
-extern void motor_setopts(unsigned char axis, unsigned char ustepbits, unsigned char current);
-extern void motor_enaxis(unsigned char axis, unsigned char en);
-extern void motor_setdir(unsigned char axis, unsigned char dir);
-extern void motor_step(unsigned char axis);
-extern void motor_unstep();
 
 extern void heaters_setup();
 extern void manage_heaters(void);
-//extern void heater_soft_pwm(void);
 extern void ConfigureTc_1(void);
-
-
-//extern void sprinter_mainloop();
-extern void initadc(int);
-extern void samserial_setcallback(void (*c)(unsigned char));
 
 
 #ifndef AT91C_ID_TC0

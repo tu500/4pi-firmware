@@ -37,10 +37,10 @@
 //// Calibration variables
 //-----------------------------------------------------------------------
 // X, Y, Z, E steps per unit
-#define _AXIS_STEP_PER_UNIT {80, 80, 3200/0.8,700}
+#define _AXIS_STEP_PER_UNIT {50, 50, 1600,700}
 
-#define _AXIS_CURRENT {128, 128, 128, 128, 128}
-#define _AXIS_USTEP {3, 3, 3, 3, 3}
+#define _AXIS_CURRENT {160, 160, 160, 160, 128}
+#define _AXIS_USTEP {16, 16, 16, 16, 16}
 
 //-----------------------------------------------------------------------
 //// Endstop Settings
@@ -65,10 +65,10 @@
 #define X_MIN_ACTIV          1
 #define X_MAX_ACTIV          -1
 
-#define Y_MIN_ACTIV          1
-#define Y_MAX_ACTIV          -1
+#define Y_MIN_ACTIV          -1
+#define Y_MAX_ACTIV          1
 
-#define Z_MIN_ACTIV          1
+#define Z_MIN_ACTIV          -1
 #define Z_MAX_ACTIV          -1
 
 //-----------------------------------------------------------------------
@@ -84,24 +84,24 @@
 // Inverting axis direction
 //-----------------------------------------------------------------------
 #define _INVERT_X_DIR 	false
-#define _INVERT_Y_DIR 	false
-#define _INVERT_Z_DIR 	true
-#define _INVERT_E_DIR 	false
+#define _INVERT_Y_DIR 	true
+#define _INVERT_Z_DIR 	false
+#define _INVERT_E_DIR 	true
 
 //-----------------------------------------------------------------------
 //// HOMING SETTINGS:
 //-----------------------------------------------------------------------
 // Sets direction of endstops when homing; 1=MAX, -1=MIN
 #define X_HOME_DIR -1
-#define Y_HOME_DIR -1
+#define Y_HOME_DIR 1
 #define Z_HOME_DIR -1
 
 //-----------------------------------------------------------------------
 //Max Length for Prusa Mendel, check the ways of your axis and set this Values
 //-----------------------------------------------------------------------
-#define _X_MAX_LENGTH	200
-#define _Y_MAX_LENGTH 	200
-#define _Z_MAX_LENGTH 	100
+#define _X_MAX_LENGTH	190
+#define _Y_MAX_LENGTH 	220
+#define _Z_MAX_LENGTH 	150
 
 
 // Set additional home offset (M206)
@@ -110,7 +110,7 @@
 //-----------------------------------------------------------------------
 //// MOVEMENT SETTINGS
 //-----------------------------------------------------------------------
-#define _MAX_FEEDRATE {400, 400, 2, 45}       // (mm/sec)    
+#define _MAX_FEEDRATE {400, 400, 6, 45}       // (mm/sec)    // TODO 6 seems much, std is 2
 #define _HOMING_FEEDRATE {1500,1500,120}      // (mm/min) !!
 #define _AXIS_RELATIVE_MODES {false, false, false, false}
 
@@ -122,9 +122,9 @@
 #define _ACCELERATION 1000         // Axis Normal acceleration mm/s^2
 #define _RETRACT_ACCELERATION 2000 // Extruder Normal acceleration mm/s^2
 #define _MAX_XY_JERK 20.0
-#define _MAX_Z_JERK 0.4
+#define _MAX_Z_JERK 0.0
 #define _MAX_E_JERK 5.0
-#define _MAX_ACCELERATION_UNITS_PER_SQ_SECOND {5000,5000,50,5000}    // X, Y, Z and E max acceleration in mm/s^2 for printing moves or retracts
+#define _MAX_ACCELERATION_UNITS_PER_SQ_SECOND {1000,1000,50,1000}    // X, Y, Z and E max acceleration in mm/s^2 for printing moves or retracts  //TODO 100 instead of 100?
 
 //For the retract (negative Extruder) move this maxiumum Limit of Feedrate is used
 //The next positive Extruder move use also this Limit, 
