@@ -263,6 +263,9 @@ void homing_routine(unsigned char axis)
 
 	if ((min_pin > (-1) && home_dir==(-1)) || (max_pin > (-1) && home_dir==1))
 	{
+		for (size_t i = 0; i<4; i++)
+			destination[i] = current_position[i];
+
 		current_position[axis] = (-1.5) * max_length * home_dir;
 		plan_set_position(current_position[X_AXIS], current_position[Y_AXIS], current_position[Z_AXIS], current_position[E_AXIS]);
 		destination[axis] = 0;
