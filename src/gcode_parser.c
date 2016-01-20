@@ -855,9 +855,19 @@ static int gcode_process_command()
 					break;
 				case 501: // M501 - reads parameters from EEPROM (if you need to reset them after you changed them temporarily).
 					FLASH_LoadSettings();
+
+					for (size_t i=0; i<5; i++)
+					{
+						motor_setopts(i,pa.axis_ustep[i],pa.axis_current[i]);
+					}
 					break;
 				case 502:	// M502 - reverts to the default "factory settings". You still need to store them in EEPROM afterwards if you want to.
 					init_parameters();
+
+					for (size_t i=0; i<5; i++)
+					{
+						motor_setopts(i,pa.axis_ustep[i],pa.axis_current[i]);
+					}
 					break;
 				case 503:	//M503 show settings
 					FLASH_PrintSettings();

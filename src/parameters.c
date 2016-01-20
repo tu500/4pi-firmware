@@ -115,7 +115,7 @@ void init_parameters(void)
 	for(cnt_c = 0;cnt_c < 5;cnt_c++)
 	{
 		pa.axis_current[cnt_c] = uc_temp1[cnt_c];
-		pa.axis_ustep[cnt_c] = uc_temp2[cnt_c];
+		pa.axis_ustep[cnt_c] = microstep_mode(uc_temp2[cnt_c]);
 	}
 	
 	pa.heater_thermistor_type[0] = THERMISTORHEATER;
