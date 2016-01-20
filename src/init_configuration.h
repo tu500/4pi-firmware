@@ -100,17 +100,17 @@
 //Max Length for Prusa Mendel, check the ways of your axis and set this Values
 //-----------------------------------------------------------------------
 #define _X_MAX_LENGTH	190
-#define _Y_MAX_LENGTH 	220
+#define _Y_MAX_LENGTH 	190
 #define _Z_MAX_LENGTH 	150
 
 
 // Set additional home offset (M206)
-#define _HOMING_OFFSET {0, 0, 0}
+#define _HOMING_OFFSET {0, 31, 0}
 
 //-----------------------------------------------------------------------
 //// MOVEMENT SETTINGS
 //-----------------------------------------------------------------------
-#define _MAX_FEEDRATE {400, 400, 6, 45}       // (mm/sec)    // TODO 6 seems much, std is 2
+#define _MAX_FEEDRATE {400, 400, 7, 45}       // (mm/sec)    // TODO 6 seems much, std is 2
 #define _HOMING_FEEDRATE {1500,1500,120}      // (mm/min) !!
 #define _AXIS_RELATIVE_MODES {false, false, false, false}
 
@@ -122,9 +122,9 @@
 #define _ACCELERATION 1000         // Axis Normal acceleration mm/s^2
 #define _RETRACT_ACCELERATION 2000 // Extruder Normal acceleration mm/s^2
 #define _MAX_XY_JERK 20.0
-#define _MAX_Z_JERK 0.0
+#define _MAX_Z_JERK 5.0
 #define _MAX_E_JERK 5.0
-#define _MAX_ACCELERATION_UNITS_PER_SQ_SECOND {1000,1000,50,1000}    // X, Y, Z and E max acceleration in mm/s^2 for printing moves or retracts  //TODO 100 instead of 100?
+#define _MAX_ACCELERATION_UNITS_PER_SQ_SECOND {1000,1000,200,1000}    // X, Y, Z and E max acceleration in mm/s^2 for printing moves or retracts  //TODO 100 instead of 100?
 
 //For the retract (negative Extruder) move this maxiumum Limit of Feedrate is used
 //The next positive Extruder move use also this Limit, 
